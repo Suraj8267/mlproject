@@ -26,5 +26,4 @@ author_email='singhsuraj182005@gmail.com',
 packages= find_packages(),
 install_requires= get_requirements('requirements.txt')  ## what all libraries we want, it will automatically download 
 
-
 )
