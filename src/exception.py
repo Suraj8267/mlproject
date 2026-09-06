@@ -1,7 +1,7 @@
 ## Refer to custom exception error handling documentation
 
 import sys ## Built-in module in python
-import logging
+from logger import logging
 
 def error_messages_details(error, error_detail: sys):  ## parameter : actualerror and error ki detailed information.
 
@@ -25,10 +25,10 @@ class CustomException(Exception): ## custom error class and hum built-in excepti
 
 
 ## check weather everything working fine or not 
-# if __name__=="__main__":
+if __name__=="__main__":
 
-#     try: 
-#         a = 1/0
-#     except Exception as e:
-#         logging.info("logging has started")
-#         raise CustomException(e, sys)
+    try: 
+        a = 1/0
+    except Exception as e:
+        logging.info("logging has started")
+        raise CustomException(e, sys)
