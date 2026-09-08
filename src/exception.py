@@ -1,7 +1,7 @@
 ## Refer to custom exception error handling documentation
 
 import sys ## Built-in module in python
-# from logger import logging
+# from src.logger import logging
 
 def error_messages_details(error, error_detail: sys):  ## parameter : actualerror and error ki detailed information.
 
