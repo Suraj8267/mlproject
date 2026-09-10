@@ -1,4 +1,5 @@
 ## Reading Data From any source and doing train test split and then storing it into artifact folder
+
 import os 
 import sys 
 from src.exception import CustomException
@@ -11,6 +12,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTranformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
 
 @dataclass  ## by using this you will be directly able to define you class variable in place of using init
 class DataIngestionConfig:  ## any input that is required by this data ingestion component is stored here ex: where i have to save the train path, where i have to save the test data, where to save the raw data
@@ -53,7 +56,11 @@ class DataIngestion:  ## when you only define variables then use @dataclass if y
 if __name__=="__main__":
     obj = DataIngestion()
     train_data, test_data = obj.initiate_data_ingestion()
-
     
     data_transformnation = DataTransformation()
-    data_transformnation.initiate_data_transformation(train_data, test_data)
+    train_array, test_array, _ = data_transformnation.initiate_data_transformation(train_data, test_data)
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainig(train_array, test_array))
+
+
