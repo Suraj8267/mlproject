@@ -4,7 +4,7 @@ import sys
 
 import numpy as np
 import pandas as pd
-import dill ## another lib to create pickle file
+import pickle ## another lib to create pickle file
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 
@@ -17,7 +17,7 @@ def save_object(file_path, object):
         os.makedirs(dir_path, exist_ok= True)
 
         with open(file_path, "wb") as file_obj:
-            dill.dump(object, file_obj)  ## Dump obj. into file_obj (preprocessor.pkl)
+            pickle.dump(object, file_obj)  ## Dump obj. into file_obj (preprocessor.pkl)
 
     except Exception as e:
         raise CustomException(e, sys)
