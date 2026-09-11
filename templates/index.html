@@ -1,1 +1,193 @@
-<h1>Welcome to the Home Page</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student ML Prediction</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #e2e8f0;
+            padding: 25px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #1e3a8a,
+                    transparent 40%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #111827 60%,
+                    #172554
+                );
+        }
+
+        .hero {
+            max-width: 650px;
+            padding: 50px 35px;
+            border-radius: 25px;
+            border: 1px solid #334155;
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-icon {
+            font-size: 60px;
+            margin-bottom: 22px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 6vw, 48px);
+            line-height: 1.2;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #60a5fa;
+        }
+
+        .description {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .start-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            padding: 15px 30px;
+            border-radius: 11px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .feature {
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 38px 22px;
+            }
+
+            .hero-icon {
+                font-size: 48px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <div class="hero-icon">🎓</div>
+
+        <span class="badge">
+            MACHINE LEARNING APPLICATION
+        </span>
+
+        <h1>
+            Welcome to the
+            <span>Student Score</span>
+            Prediction
+        </h1>
+
+        <p class="description">
+            Predict student academic performance using
+            Machine Learning. Enter student details and
+            get an estimated score from the trained model.
+        </p>
+
+        <a href="{{ url_for('predict_datapoint') }}" class="start-btn">
+            Start Prediction →
+        </a>
+
+        <div class="features">
+
+            <div class="feature">Python</div>
+
+            <div class="feature">Flask</div>
+
+            <div class="feature">ML Model</div>
+
+            <div class="feature">Data Science</div>
+
+        </div>
+
+        <div class="footer">
+            Student Performance Prediction Project
+        </div>
+
+    </div>
+
+</body>
+</html>
